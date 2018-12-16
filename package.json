@@ -2,9 +2,12 @@
   "name": "browservision",
   "version": "0.0.0",
   "description": "Computer vision for the browser, one day used for 2d image scanning",
-  "main": "index.js",
+  "browser": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:mockServer": "node --harmony ./__mock__/mockServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:coverage": "NODE_V8_COVERAGE=test_coverage node --harmony ./index.test.js",
+    "build:documentation": "jsdoc -c vendor_configuration/jsdoc.conf.json"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/srsheldon/BrowserVision/issues"
   },
-  "homepage": "https://github.com/srsheldon/BrowserVision#readme"
+  "homepage": "https://github.com/srsheldon/BrowserVision#readme",
+  "engines": {
+    "node": ">=10.12.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
 }
